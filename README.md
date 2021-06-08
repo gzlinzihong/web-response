@@ -1,22 +1,3 @@
-Header: X-Ratelimit-Remaining=59
-Header: X-Ratelimit-Used=1
-Header: X-Ratelimit-Resource=core
-Header: Access-Control-Allow-Origin=*
-Header: X-Xss-Protection=0
-Header: Referrer-Policy=origin-when-cross-origin, strict-origin-when-cross-origin
-Header: Date=Tue, 08 Jun 2021 12:55:38 GMT
-Header: Content-Type=text/html;charset=utf-8
-Header: X-Commonmarker-Version=0.21.0
-Header: X-Ratelimit-Limit=60
-Header: Vary=Accept-Encoding, Accept, X-Requested-With
-Header: Server=GitHub.com
-Header: X-Ratelimit-Reset=1623160538
-Header: X-Frame-Options=deny
-Header: X-Github-Request-Id=CB4C:4612:31E35D4:34E9D8B:60BF68C9
-Header: Access-Control-Expose-Headers=ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
-Header: Strict-Transport-Security=max-age=31536000; includeSubdomains; preload
-Header: X-Content-Type-Options=nosniff
-Header: Content-Security-Policy=default-src 'none'
 * [Introduction](#introduction)
 * [Install](#install)
 * [Usage](#usage)
