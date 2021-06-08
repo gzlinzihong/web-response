@@ -27,6 +27,11 @@ public class ResultFilter extends OncePerRequestFilter implements OrderedFilter 
         try {
             filterChain.doFilter(httpServletRequest, httpServletResponse);
             AbstractResult abstractResult = ResultContext.get();
+            httpServletResponse.setCharacterEncoding("utf-8");
+            httpServletResponse.setContentType("application/json;charset=UTF-8");
+            if (abstractResult == null){
+                return;
+            }
             abstractResult.output(httpServletResponse.getWriter());
         }catch (Exception e){
             AbstractResult abstractResult;
