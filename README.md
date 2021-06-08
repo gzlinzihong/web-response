@@ -5,10 +5,13 @@
   * [报错，即server error](#报错即server-error)
   * [其他响应](#其他响应)
   * [自定义status对象](#自定义status对象)
+  * [异常](#异常)
+  * [自定义返回](#自定义返回)
 
 ## Introduction
 一个人让你使用起来非常舒服的web项目响应请求框架
 
+你可以在任意地方抛出你的异常
 ## Install
 1. 克隆此项目
 ```
@@ -121,3 +124,52 @@ public enum SupportStatus implements StatusCarrier {
 
 其他使用同上
 
+### 异常
+你可以在任意地方抛出异常
+```java
+    @GetMapping("/hello")
+    public void hello(){
+        // doSomething
+        throw new ResultRuntimeException(CommonResultStatus.BAD_REQUEST);
+    }
+```
+
+### 自定义返回
+如果你不想返回json。可以自行定制
+
+步骤如下
+1. 写一个类继承AbstractResult
+```java
+/**
+ * @author ilanky
+ * @date 2021年 05月04日 20:33:23
+ */
+public class DataResult extends AbstractResult {
+
+    public DataResult(StatusCarrier statusCarrier) {
+        super(statusCarrier);
+    }
+
+    public DataResult(StatusCarrier statusCarrier, Object result) {
+        super(statusCarrier, result);
+    }
+
+    @Override
+    public void output(PrintWriter printWriter) {
+        printWriter.write("test");
+    }
+}
+
+```
+2. 将此类注入ioc
+```java
+    @Bean
+    public ResultConfig resultConfig(){
+        return new ResultConfig() {
+            @Override
+            public Class<? extends AbstractResult> activeResultClass() {
+                return DataResult.class;
+            }
+        };
+    }
+```
