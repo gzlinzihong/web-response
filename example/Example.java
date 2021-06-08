@@ -19,7 +19,7 @@ public class Example {
 //        ResultContext.ok("hello world");
 //    }
 
-    // {"msg":"Internal Server Error","result":null,"code":500}
+//     {"msg":"Internal Server Error","result":null,"code":500}
 //    public void hello(){
 //        ResultContext.serverError();
 //    }
