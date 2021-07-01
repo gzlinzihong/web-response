@@ -11,11 +11,11 @@ import org.slf4j.LoggerFactory;
  */
 public class JacksonUtil {
     private static final Logger LOG = LoggerFactory.getLogger(JacksonUtil.class);
+    private static final ObjectMapper MAPPER = new ObjectMapper();
 
     public static String json(Object o){
-        ObjectMapper mapper = ObjectMapperHolder.get();
         try {
-            return mapper.writeValueAsString(o);
+            return MAPPER.writeValueAsString(o);
         } catch (JsonProcessingException e) {
             LOG.error("to json error", e);
         }
